@@ -1,0 +1,391 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Epilogue', sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background-color: hsl(0, 0%, 95%);
+    overflow-x: hidden;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.header-left{
+    display: flex;
+    align-items: start;
+}
+
+.logo{
+    margin-right: 5rem;
+    cursor: pointer;
+}
+
+.navlinks-div{
+    display: flex;
+    align-items: top;
+}
+
+.nav-link{
+    margin: 0 1.5rem;
+    cursor: pointer;
+}
+
+.nav-link p{
+    font-size: 16px;
+    color: hsl(0, 0%, 41%);
+    transition: .2s;
+}
+
+.nav-link p:hover{
+    color: hsl(0, 0%, 8%);
+    font-weight: bold;
+}
+
+.features-div{
+    margin: unset;
+}
+
+.features-div, .company-div{
+    position: relative;
+}
+
+.link-top{
+    display: flex;
+    align-items: center;
+}
+
+
+.arrow{
+    margin-left: 5px;
+    transition: .3s;
+}
+
+.features-js.active .arrow, .company-js.active .arrow{
+    transform: rotate(180deg);
+}
+
+.dropdown{
+    padding: 20px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, .3);
+    border-radius: 10px;
+    background-color: white;
+    position: fixed;
+    top: 60px;
+    display: none;
+}
+
+.features-js.active .dropdown, .company-js.active .dropdown{
+    display: block;
+}
+
+.features.dropdown{
+    left: 100px;
+}
+
+.dropdown p{
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.dropdown p:last-child{
+    margin-bottom: unset;
+}
+
+.dropdown p img{
+    margin-right: 1rem;
+}
+
+.header-right{
+    display: flex;
+    align-items: center;
+}
+
+.login{
+    font-size: 16px;
+    color: hsl(0, 0%, 41%);
+    margin-right: 2.5rem;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.login:hover{
+    color: black;
+    font-weight: bold;
+}
+
+.register-btn{
+    padding: 10px 15px;
+    color: hsl(0, 0%, 41%);
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid hsl(0, 0%, 41%);
+    background: transparent;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.register-btn:hover{
+    color: hsl(0, 0%, 8%);
+    font-weight: bold;
+}
+
+/*------main-section-----*/
+
+main{
+    height: auto;
+    width: 75vw;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    align-items: end;
+    height: 500px;
+    justify-content: space-between;
+   
+}
+
+.left-side{
+    width: 500px;
+}
+
+.left-side h1{
+    font-weight: bold;
+    font-size: 70px;
+    margin-bottom: 2rem;
+    color: hsl(0, 0%, 8%);
+}
+
+.left-side p{
+    font-size: 16px;
+    color: hsl(0, 0%, 41%);
+    margin-bottom: 2rem;
+}
+
+.learn-more-btn{
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid hsl(0, 0%, 8%);
+    background-color: hsl(0, 0%, 8%);
+    color: hsl(0, 0%, 98%);
+    cursor: pointer;
+    margin-bottom: 5rem;
+    transition: .15s;
+}
+
+.learn-more-btn:hover{
+    background-color: hsl(0, 0%, 98%);
+    color: hsl(0, 0%, 8%);
+    border: 1px solid hsl(0, 0%, 8%);
+}
+
+.partners{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right-side{
+    background-image: url(images/image-hero-desktop.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 100%;
+}
+
+.menu{
+    display: none;
+}
+
+.open-menu{
+    display: none;
+    cursor: pointer;
+}
+
+
+footer{
+    margin-top: 2rem;
+}
+
+.attribution{
+    color: hsl(0, 0%, 41%);
+}
+
+.attribution a{
+    color: hsl(0, 0%, 8%);
+    transition: .2s;
+}
+
+.attribution a:hover{
+    color: rgb(45, 132, 231);
+}
+
+.overlay{
+    height: 100vh;
+    width: 100vw;
+    border: 1px solid;
+    position: absolute;
+    background: hsl(0 0% 5% / 0.6);
+    backdrop-filter: blur(0.1rem);
+    display: none;
+}
+
+/*-------for small screens----*/
+
+@media screen and (max-width: 800px){
+    body{
+        padding: 20px 10px;
+        position: relative;
+        height: auto;
+    }
+
+    header{
+        width: 100%;
+    }
+
+    .navlinks-div{
+        display: none;
+    }
+
+    .header-right{
+        display: none;
+    }
+
+    main{
+        width: 100%;
+    }
+
+    .container{
+        flex-direction: column-reverse;
+        justify-content: unset;
+        height: auto;
+        align-items: center;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .right-side{
+        background-image: url(images/image-hero-mobile.png);
+        height: 300px;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .left-side{
+        width: 100%;
+        height: unset;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    .left-side h1{
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .break{
+        display: none;
+    }
+
+    .left-side p{
+        text-align: center;
+    }
+
+    .partners{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .partners img{
+        width: 80px;
+    }
+
+    .open-menu{
+        display: block;
+    }
+
+    .right-side{
+        width: 100%;
+    }
+
+
+    .menu{
+        display: block;
+        position: fixed;
+        right: -300px;
+        top: 0;
+        bottom: 0;
+        background-color: white;
+        width: 200px;
+        padding: 30px;
+        z-index: 2;
+        transition:  0.5s;
+    }
+
+    .nav-link{
+        margin: unset;
+    }
+
+    .close-menu{
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: right;
+    }
+
+    .close-menu img{
+        cursor: pointer;
+    }
+
+    .nav-link{
+        margin-bottom: 1.5rem;
+    }
+
+    .dropdown{
+        position: unset;
+        padding: unset;
+        padding: 10px;
+        background-color: unset;
+        box-shadow: unset;
+        margin-top: 10px;
+        margin-left: 15px;
+    }
+    
+    .login{
+        text-align: center;
+        width: 100%;
+    }
+
+    .register-btn{
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .attribution{
+        font-size: 10px;
+        text-align: center;
+    }
+
+    body.active .overlay{
+        display: block;
+        height: 100%;
+        left: 0;
+        top: 0;
+    }
+}
